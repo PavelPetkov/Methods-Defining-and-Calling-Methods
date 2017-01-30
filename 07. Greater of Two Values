@@ -1,0 +1,68 @@
+namespace Methods.Debugging_and_Troubleshooting_Code
+{
+    using System;
+
+    class GreaterofTwoValues
+    {
+        public static void Main()
+        {
+            var type = Console.ReadLine();
+            switch (type)
+            {
+                case "int":
+                    {
+                        int var1 = int.Parse(Console.ReadLine());
+                        int var2 = int.Parse(Console.ReadLine());
+                        Compare(var1, var2);
+                        break;
+                    }
+
+                case "char":
+                    {
+                        char var1 = char.Parse(Console.ReadLine());
+                        char var2 = char.Parse(Console.ReadLine());
+                        Compare(var1, var2);
+                        break;
+                    }
+
+                case "string":
+                    {
+                        string var1 = Console.ReadLine();
+                        string var2 = Console.ReadLine();
+                        Compare(var1, var2);
+                        break;
+                    }
+
+            }
+        }
+
+        public static int Compare(int var1, int var2)
+        {
+            int biggerVar = Math.Max(var1, var2);
+            Console.WriteLine(biggerVar);
+            return biggerVar;
+        }
+        public static char Compare(char var1, char var2)
+        {
+            char biggerVar = (char)Math.Max(var1, var2);
+            Console.WriteLine(biggerVar);
+            return biggerVar;
+        }
+        public static string Compare(string var1, string var2)
+        {
+            if (var1.CompareTo(var2) >= 0)
+            {
+                var biggerVar = var1;
+                Console.WriteLine(biggerVar);
+                return biggerVar;
+            }
+            else
+            {
+                var biggerVar = var2;
+                Console.WriteLine(biggerVar);
+                return biggerVar;
+            }
+        }
+
+    }
+}
