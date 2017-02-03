@@ -1,0 +1,49 @@
+using System;
+					
+public class Cube_Properties
+{
+	public static void Main()
+	{
+		
+		string figure = Console.ReadLine();
+		
+		switch (figure)
+		{
+			case "triangle":{Console.WriteLine("{0:f2}",triangle());break;}
+			case "square":{Console.WriteLine("{0:f2}",square());break;}
+			case "rectangle":{Console.WriteLine("{0:f2}",rectangle());break;}
+			case "circle":{Console.WriteLine("{0:f2}",circle());break;}	
+		
+		}
+	}
+	
+	
+	public static double triangle()
+	{
+		double side = double.Parse(Console.ReadLine());
+		double hight = double.Parse(Console.ReadLine());
+		double triangleArea = side*hight/2.0;
+		return Math.Round(triangleArea,2);
+	}
+	
+	public static double square()
+	{
+		double side = double.Parse(Console.ReadLine());
+		double squareArea = side*side;
+		return Math.Round(squareArea,2);
+	}
+	public static double rectangle()
+	{
+		double side = double.Parse(Console.ReadLine());
+		double width = double.Parse(Console.ReadLine());
+		double rectangleArea = side*width;
+		return Math.Round(rectangleArea,2);;
+	}
+	public static double circle()
+	{
+		double radius = double.Parse(Console.ReadLine());
+		double circleArea = Math.PI*radius*radius;
+		return Math.Round(circleArea,2);
+	}
+
+}
