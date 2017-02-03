@@ -1,0 +1,43 @@
+using System;
+					
+public class Cube_Properties
+{
+	public static void Main()
+	{
+		double cubeSide = double.Parse(Console.ReadLine());
+		string cubeParameter = Console.ReadLine();
+		
+		switch (cubeParameter)
+		{
+			case "face":{ Console.WriteLine(face(cubeSide));break;}
+			case "space":{Console.WriteLine(space(cubeSide));break;}
+			case "volume":{Console.WriteLine(volume(cubeSide));break;}
+			case "area":{Console.WriteLine(area(cubeSide));break;}	
+		
+		}
+	}
+	
+	
+	public static double face(double cubeSide)
+	{
+		double cubeFaceDiagonal = cubeSide*Math.Sqrt(2);
+		return Math.Round(cubeFaceDiagonal,2);
+	}
+	
+	public static double space(double cubeSide)
+	{
+		double cubeSpaceDiagonal = cubeSide*Math.Sqrt(3);
+		return Math.Round(cubeSpaceDiagonal,2);
+	}
+	public static double volume(double cubeSide)
+	{
+		double cubeVolume = cubeSide*cubeSide*cubeSide;
+		return Math.Round(cubeVolume,2);
+	}
+	public static double area(double cubeSide)
+	{
+		double cubeArea = cubeSide*cubeSide*6;
+		return Math.Round(cubeArea,2);
+	}
+
+}
