@@ -1,0 +1,64 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		var line1x1 = double.Parse(Console.ReadLine());
+		var line1y1 = double.Parse(Console.ReadLine());
+		var line1x2 = double.Parse(Console.ReadLine());
+		var line1y2 = double.Parse(Console.ReadLine());
+		
+		var line2x1 = double.Parse(Console.ReadLine());
+		var line2y1 = double.Parse(Console.ReadLine());
+		var line2x2 = double.Parse(Console.ReadLine());
+		var line2y2 = double.Parse(Console.ReadLine());
+		
+		var line1 = Math.Sqrt((Math.Pow(line1x1 - line1x2, 2))+(Math.Pow(line1y1 - line1y2, 2)));
+		var line2 = Math.Sqrt((Math.Pow(line2x1 - line2x2, 2))+(Math.Pow(line2y1 - line2y2, 2)));
+		
+		if (line1>=line2)
+		{
+		printClosest(line1x1, line1y1, line1x2, line1y2);
+		printSecond(line1x1, line1y1, line1x2, line1y2);
+		}
+		else
+		{
+		printClosest(line2x1, line2y1, line2x2, line2y2);
+		printSecond(line2x1, line2y1, line2x2, line2y2);
+		}
+
+	}
+	
+		public static void printClosest(double x1, double y1, double x2,  double y2)
+	{
+	
+		var point1  = Math.Abs(x1)+ Math.Abs(y1);
+		var point2  = Math.Abs(x2)+ Math.Abs(y2);
+		
+		if(point1<=point2)
+		{
+			Console.Write("({0}, {1})", x1, y1);
+		}
+		else
+		{
+		Console.Write("({0}, {1})", x2, y2);
+		}
+	}
+		public static void printSecond(double x1, double y1, double x2,  double y2)
+	{
+	
+		var point1  = Math.Abs(x1)+ Math.Abs(y1);
+		var point2  = Math.Abs(x2)+ Math.Abs(y2);
+		
+		if(point1>point2)
+		{
+			Console.Write("({0}, {1})", x1, y1);
+		}
+		else
+		{
+		Console.Write("({0}, {1})", x2, y2);
+		}
+	}
+	
+}
